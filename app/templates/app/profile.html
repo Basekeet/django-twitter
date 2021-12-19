@@ -64,7 +64,7 @@
         </div>
         <div class="wrapper">
         {% if own %}
-            <form action="{% url 'create_post' user.username %}" method="post" class="create_post">
+            <form action="{% url 'create_post' %}" method="post" class="create_post">
                 {% csrf_token %}
                 <input type="text" name="text" placeholder="Введите текст" class="post_text">
                 <button type="submit" value="Создать пост" class="button_create_post">Создать пост</button>
