@@ -353,3 +353,12 @@ header form {
     font-size: 20px;
     color: #013563;
 }
+
+.list_title {
+    font-weight: bold;
+    font-size: 50px;
+    line-height: 59px;
+
+    color: #013563;
+    margin-bottom: 20px;
+}

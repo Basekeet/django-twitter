@@ -17,16 +17,16 @@
 
     <main>
         <div class="wrapper">
-            <form action="{% url 'change_username' %}" method="post">
+            <form class="change_form" action="{% url 'change_username' %}" method="post">
                 {% csrf_token %}
-                <input type="text" name='new_username' value="{{ user.username }}"/>
-                <button type="submit">Подтвердить</button>
+                <input class="new_username" type="text" name='new_username' value="{{ user.username }}"/>
+                <button class="button_change" type="submit">Подтвердить</button>
             </form>
 
-            <form action="{% url 'change_bio' %}" method="post">
+            <form class="change_bio" action="{% url 'change_bio' %}" method="post">
                 {% csrf_token %}
-                <input type="text" name='new_bio' value="{{ user.profile.bio }}"/>
-                <button type="submit">Подтвердить</button>
+                <input class="new_bio" type="text" name='new_bio' value="{{ user.profile.bio }}"/>
+                <button class="button_change" type="submit">Подтвердить</button>
             </form>
         </div>
     </main>

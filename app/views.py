@@ -168,7 +168,7 @@ def change_bio(request):
             u = User.objects.all().get(username=request.user.username)
             u.profile.bio = request.POST["new_bio"]
             u.profile.save()
-    return redirect(request.user.username)
+    return redirect('profile', request.user.username)
 
 
 def get_profile(request):
