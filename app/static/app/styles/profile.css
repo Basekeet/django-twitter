@@ -1,0 +1,355 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+article > * + * {
+  margin-top: 1em;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@font-face {
+  font-family: Roboto;
+  src: url(../fonts/Roboto-Regular.ttf);
+}
+
+@font-face {
+  font-family: Roboto;
+  font-weight: bold;
+  src: url(../fonts/Roboto-Bold.ttf);
+}
+
+
+body {
+    font-family: Roboto;
+    background-color: #EDE7DB;
+    color: #013563;
+}
+
+.header {
+    height: 100px;
+    width: 100%;
+    background-color: #013563;
+}
+
+.wrapper {
+    max-width: 1200px;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.header .wrapper {
+    padding-left: 20px;
+    display: flex;
+    align-items: center;
+    height: 100%;
+
+}
+
+.logo {
+    font-family: Roboto;
+    font-weight: bold;
+    font-size: 50px;
+    color: #EDE7DB;
+}
+
+.content .wrapper {
+    margin-top: 30px;
+}
+
+.name_card {
+    max-width: 512px;
+    width:100%;
+    background: #EDE7DB;
+    box-shadow: 10px 10px 50px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.name_card .username {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.name_card .bio {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 23px;
+}
+
+.content .buttons {
+    display: flex;
+    flex-direction: column;
+    margin-left: 40px;
+}
+
+.content .buttons .add_friend {
+    display: block;
+    color: #EDE7DB;
+    padding: 10px;
+    font-size: 20px;
+    line-height: 23px;
+    background-color: #03A6A6;
+    border-radius: 4px;
+    list-style: none;
+    box-shadow: 10px 10px 50px rgba(0, 0, 0, 0.25);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.content .buttons .remove_friend {
+    display: block;
+    color: #EDE7DB;
+    padding: 10px;
+    font-size: 20px;
+    line-height: 23px;
+    background-color: #da124e;
+    border-radius: 4px;
+    list-style: none;
+    box-shadow: 10px 10px 50px rgba(0, 0, 0, 0.25);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.content .buttons .change_data {
+    display: block;
+    text-align: center;
+    color: #EDE7DB;
+    padding: 10px;
+    font-size: 20px;
+    line-height: 23px;
+    background: #1C5880;
+    border-radius: 4px;
+    list-style: none;
+    box-shadow: 10px 10px 50px rgba(0, 0, 0, 0.25);
+    margin-bottom: 20px;
+}
+.content .subs {
+    background: #EDE7DB;
+    box-shadow: 10px 10px 50px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    padding: 10px;
+    padding-bottom: 0px;
+    display: flex;
+    max-height: 50px;
+}
+
+.content .rev-subs {
+    background: #EDE7DB;
+    box-shadow: 10px 10px 50px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    padding: 10px;
+    padding-bottom: 0px;
+    display: flex;
+    max-height: 50px;
+    margin-left: 30px;
+}
+
+.content .subs_text {
+    font-family: Roboto;
+    font-size: 20px;
+}
+
+.post_text {
+    background: #EDE7DB;
+    box-shadow: 10px 10px 50px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    border: none;
+    padding: 10px;
+    font-size: 20px;
+    color: #013563;
+    min-width: 350px;
+}
+
+.content .subs_num {
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 35px;
+    margin-left: 10px;
+    color: #03A6A6;
+}
+
+.button_create_post {
+    background: #013563;
+    box-shadow: 10px 10px 50px rgba(0, 0, 0, 0.35);
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 20px;
+    line-height: 23px;
+    color: #EDE7DB;
+    border: none;
+    margin-left: 20px;
+}
+
+.posts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.posts .post {
+    max-width: 600px;
+    width: 100%;
+    background: #EDE7DB;
+    box-shadow: 10px 10px 50px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+.posts .post_header {
+    padding-left: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background: #013563;
+    box-shadow: 10px 10px 50px rgba(0, 0, 0, 0.25);
+    border-radius: 10px 10px 0px 0px;
+    font-weight: bold;
+    font-size: 25px;
+    line-height: 29px;
+
+    color: #EDE7DB;
+}
+
+.posts .post_content {
+    padding: 40px;
+    font-size: 20px;
+}
+
+a:-webkit-any-link {
+    color: #013563;
+    text-decoration: none;
+}
+
+header form {
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.search_text {
+    background: #EDE7DB;
+    box-shadow: 10px 10px 50px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    border: none;
+    padding: 5px;
+    font-size: 15px;
+    color: #013563;
+}
+
+.search_button {
+    display: block;
+    text-align: center;
+    color: #EDE7DB;
+    padding: 5px;
+    font-size: 15px;
+    line-height: 23px;
+    background: #1C5880;
+    border-radius: 4px;
+    list-style: none;
+    box-shadow: 10px 10px 50px rgba(0, 0, 0, 0.25);
+    /* margin-bottom: px; */
+    margin-left: 10px;
+    border: none;
+}
+
+
+.logout_button {
+    display: block;
+    background-color: #EDE7DB;
+    padding: 3px;
+    margin-left: 10px;
+    border-radius: 4px;
+}
+
+.profile_cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile_cards .profile_card {
+    background: #EDE7DB;
+    box-shadow: 10px 10px 50px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    padding: 20px;
+    min-width: 400px;
+    margin-bottom: 30px;
+}
+
+.card_username {
+    font-weight: bold;
+    font-size: 40px;
+    color: #013563;
+    margin-bottom: 10px;
+}
+
+.card_bio {
+    font-size: 20px;
+    color: #013563;
+}

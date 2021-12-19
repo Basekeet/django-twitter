@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link href="{% static 'app/styles/main.css' %}" rel="stylesheet" />
+</head>
+<body>
+    <header class="header">
+        <div class="wrapper">
+            <div class="logo">
+                Kwitter
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="wrapper">
+            <form action="{% url 'change_username' %}" method="post">
+                {% csrf_token %}
+                <input type="text" name='new_username' value="{{ user.username }}"/>
+                <button type="submit">Подтвердить</button>
+            </form>
+
+            <form action="{% url 'change_bio' %}" method="post">
+                {% csrf_token %}
+                <input type="text" name='new_bio' value="{{ user.profile.bio }}"/>
+                <button type="submit">Подтвердить</button>
+            </form>
+        </div>
+    </main>
+
+</body>
+</html>

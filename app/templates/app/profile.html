@@ -1,0 +1,88 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link href="{% static 'app/styles/profile.css' %}" rel="stylesheet" />
+</head>
+<body>
+    <header class="header">
+        <div class="wrapper">
+            <a href="{% url 'index' %}"> 
+                <div class="logo">
+                    Kwitter
+                </div>
+             </a>
+            <form action="{% url 'get_profile' %}" method="post">
+                {% csrf_token %}
+                <input type="search_text" name="search_username" class="search_text" placeholder="Введите имя">
+                <button type="submit" value="Найти человека" class="search_button">Найти человека</button>
+            </form>
+            <a class='logout_button' href="{% url 'user_logout' %}">Выйти</a>
+        </div>
+    </header> 
+
+    <main class="content">
+        <div class="wrapper">
+            <div class="name_card"> 
+                <div class="username">
+                    @{{ user.username }}
+                </div>
+                <div class="bio">
+                    {{ bio }}
+                </div>
+            </div>
+            <div class="buttons">
+                {% if auth %}
+                    {% if not own %}
+                        {% if not sub %}
+                            <a href="{% url 'add_friend' user.username %}" class="add_friend">Подписаться</a>
+                        {% else %}
+                            <a href="{% url 'remove_friend' user.username %}" class="remove_friend">Отписаться</a>
+                        {% endif %}
+                    {% endif %}
+                    {% if own %}
+                        <a href="{% url 'change_data' user.username %}" class="change_data">Настройки</a>
+                    {% endif %}
+                {% endif %}
+            </div>
+        </div>
+        <div class="wrapper">
+            <a href="{% url 'profile_subs' user.username %}">
+                <div class="subs">
+                    <label class="subs_text">Подписчики</label>
+                    <label class="subs_num">{{ subs_num }}</label>
+                </div>
+            </a>
+            <a href="{% url 'profile_friends' user.username %}">
+                <div class="rev-subs">
+                    <div class="subs_text">Подписки</div>
+                    <div class="subs_num">{{ friends_num }}</div>
+                </div>
+            </a>
+        </div>
+        <div class="wrapper">
+        {% if own %}
+            <form action="{% url 'create_post' user.username %}" method="post" class="create_post">
+                {% csrf_token %}
+                <input type="text" name="text" placeholder="Введите текст" class="post_text">
+                <button type="submit" value="Создать пост" class="button_create_post">Создать пост</button>
+            </form>
+        {% endif %}
+        </div>
+        <div class="wrapper posts">
+            {% for post in posts %}
+                <div class="post">
+                    <div class="post_header">
+                        @{{ user.username }}
+                    </div>
+                    <div class="post_content">  
+                        {{ post.text }}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </main>
+</body>
+</html>

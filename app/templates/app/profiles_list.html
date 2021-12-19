@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link href="{% static 'app/styles/profile.css' %}" rel="stylesheet" />
+</head>
+<body>
+    <header class="header">
+        <div class="wrapper">
+            <a href="{% url 'index' %}"> 
+                <div class="logo">
+                    Kwitter
+                </div>
+             </a>
+            <form action="{% url 'get_profile' %}" method="post">
+                {% csrf_token %}
+                <input type="search_text" name="search_username" class="search_text" placeholder="Введите имя">
+                <button type="submit" value="Найти человека" class="search_button">Найти человека</button>
+            </form>
+            <a class='logout_button' href="{% url 'user_logout' %}">Выйти</a>
+        </div>
+    </header> 
+
+    <main class="content">
+        <div class="wrapper profile_cards">
+            <div class="list_title">
+                {{ list_title }}
+            </div>
+            {% for prof in profiles  %}
+                <a href='{% url "profile" prof.user.username %}'>
+                    <div class="profile_card">
+                        <div class='card_username'>
+                            @{{ prof.user.username }}
+                        </div>
+                        <div class='card_bio'>
+                            {{ prof.bio }}
+                        </div>
+                    </div>
+                </a>
+            {% endfor %}
+        </div>
+    </main>
+</body>
+</html>

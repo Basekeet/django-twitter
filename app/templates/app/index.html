@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link href="{% static 'app/styles/main.css' %}" rel="stylesheet" />
+</head>
+<body>
+    <header class="header">
+        <div class="wrapper">
+            <div class="logo">
+                Kwitter
+            </div>
+        </div>
+    </header>
+
+    <main class="content">
+        <div class="wrapper">
+            <form action="{%  url 'user_login' %}" method="post">
+                {% csrf_token %}
+                <div class="form_title">
+                    Вход в Kwitter
+                </div>
+                <label for="username">Имя пользователя:</label>
+                <input type="text" name="username" id="login_username" class="form_input_text">
+                <label for="password">Пароль:</label>
+                <input type="password" name="password" id="login_password" class="form_input_text">
+                <input type="submit" value="Войти">
+            </form>
+
+            <form action="{% url 'user_register' %}" method="post">
+                {% csrf_token %}
+                <div class="form_title">
+                    Регистрация в Kwitter
+                </div>
+                <label for="username">Имя пользователя:</label>
+                <input type="text" name="username" id="register_username" class="form_input_text">
+                <label for="password">Пароль:</label>
+                <input type="password" name="password" id="register_password" class="form_input_text">
+                <input type="submit" value="Зарегистрироваться">
+            </form>
+        </div>
+    </main>
+</body>
+</html>
